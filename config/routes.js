@@ -1,6 +1,8 @@
 module.exports = (app) => {
   app.get('/', (req, res) => {
-    res.send('Hello World!')
+    res.render('index', {
+      pageName: 'A Sample application'
+    })
   });
 
   app.get('/healthz', (req, res) => {
