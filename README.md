@@ -8,8 +8,15 @@ Install all dependencies for "production".
 ```
 yarn install
 ```
+`port` and `host` bindings can be configured by creating a `.env` file in the project root.
+This file will get loaded at application init.  
+e.g.:
+```
+PORT=3030
+HOST=127.0.0.1
+```
 
-Run the application, `port` and `host` bindings can be configured via the [.env file](.env).
+Run the application  
 ```
 $ yarn run v1.3.2
 $ NODE_PATH=./config:./controllers:./models:./assets node server.js
