@@ -7,7 +7,6 @@ require('application')(app);
 // this will configure the routes that we are using with the application.
 require('routes')(app);
 
-
 // create a basic server that will try and load the env variables defined in the
 // .env file, otherwise it will fallback to some default hardcoded values.
 const server = app.listen(process.env.PORT || 3000, process.env.HOST || '127.0.0.1', () => {

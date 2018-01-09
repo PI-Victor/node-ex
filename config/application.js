@@ -3,8 +3,6 @@
 const cons = require('consolidate');
 // morgan is our logger library that helps us with debugging.
 const logger = require('morgan');
-//express is our http server of choice
-const express = require('express');
 // this little library will just serve the favicon.
 const favIcon = require('serve-favicon');
 // colors add highlighting to important operations to make it easier to debug
@@ -31,7 +29,7 @@ module.exports = (app) => {
   app.use(logger('dev'));
   app.set('view engine', 'html');
   app.set('views', viewsPath);
-  
+
   // set our favicon
   app.use(favIcon(favIconPath));
 }
