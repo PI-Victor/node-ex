@@ -16,13 +16,15 @@
     "serve-favicon": "^2.4.5"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "NODE_PATH=./config:./routes:./controllers:./models:./assets node server.js",
-    "devserve": "NODE_PATH=./config:./routes:./controllers:./models:./assets ./node_modules/supervisor/lib/cli-wrapper.js -e 'html|js' app server.js"
+    "test": "NODE_PATH=./config:./routes:./models:./assets ./node_modules/mocha/bin/mocha --timeout 500 -R spec --ui tdd tests/*_test.js",
+    "start": "NODE_PATH=./config:./routes:./models:./assets node server.js",
+    "devserve": "NODE_PATH=./config:./routes:./models:./assets ./node_modules/supervisor/lib/cli-wrapper.js -e 'html|js' app server.js"
   },
   "devDependencies": {
     "chai": "^4.1.2",
-    "mocha": "^4.1.0",
+    "mocha": "3.5.3",
+    "should": "^13.2.0",
+    "supertest": "^3.0.0",
     "supervisor": "^0.12.0"
   }
 }
