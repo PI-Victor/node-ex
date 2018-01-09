@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8">
-    <title>{{pageName}}</title>
+    <title>{{pageTitle}}</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Align with bootstrap config for mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -13,10 +13,40 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
   </head>
   <body>
-    <div class="container">
-      <h1>{{pageName}}</h1>
+    <div class="container-fluid">
+      <div class="row">
+          <h2 class="text-center">{{pageName}}</h2>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="container">
+          <h2 class="text-center">Users</h2>
+          <table class="table table-hover table-striped">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Skills</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each users}}
+                {{#each this}}
+                <tr>
+                  <td>{{this.name}}</td>
+                  <td>{{this.position}}</td>
+                  <td>{{this.skills}}</td>
+                </tr>
+                {{/each}}
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
     <!-- Latest compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+    crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </body>
 </html>
