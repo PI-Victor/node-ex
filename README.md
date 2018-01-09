@@ -58,3 +58,17 @@ Watching directory '/$HOME/$USER/cpm-engineering/node-ex' for changes.
 Press rs for restarting the process.
 Application accessible on http://127.0.0.1:3030
 ```
+
+#### Observations
+
+We set the `NODE_PATH` env var, in `package.json`, to tell Node where to find
+our modules. Although it's more obscure it allows us to use modules globally and
+not have to do relative imports e.g.: `const config = require('./config')`.
+
+```json
+"scripts": {
+  "test": "NODE_PATH=./config:./routes:./models:./assets ./node_modules/mocha/bin/mocha --timeout 500 -R spec --ui tdd tests/*_test.js",
+  "start": "NODE_PATH=./config:./routes:./models:./assets node server.js",
+  "devserve": "NODE_PATH=./config:./routes:./models:./assets ./node_modules/supervisor/lib/cli-wrapper.js -e 'html|js' app server.js"
+}
+```
