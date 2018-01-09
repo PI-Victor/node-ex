@@ -72,3 +72,25 @@ not have to do relative imports e.g.: `const config = require('./config')`.
   "devserve": "NODE_PATH=./config:./routes:./models:./assets ./node_modules/supervisor/lib/cli-wrapper.js -e 'html|js' app server.js"
 }
 ```
+
+
+#### Testing
+
+This will run a server and test for the endpoints defined.
+
+```sh
+$ yarn run test
+yarn run v1.3.2
+$ NODE_PATH=./config:./routes:./models:./assets ./node_modules/mocha/bin/mocha --timeout 500 -R spec --ui tdd tests/*_test.js
+
+  Basic application endpoint test
+GET / 200 16.093 ms - 2453
+    ✓ GET to index should return 200
+GET /healthz 200 0.322 ms - 2
+    ✓ GET to /healthz should return 200
+
+
+  2 passing (53ms)
+
+✨  Done in 0.68s.
+```
