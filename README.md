@@ -1,7 +1,9 @@
 # node-ex
-An opinionated NodeJS application that uses [expressjs](https://expressjs.com/).  
+An opinionated NodeJS application that uses [ExpressJS](https://expressjs.com/).  
 
-__The structure of this application reflects only the easiest way the author found to get started with a js application and could be lacking or not reflect best practices__.
+_The structure of this application reflects the easiest way the author found to
+get started with a js application and could be lacking or not reflect best
+practices_.
 
 Some other, more comprehensive, NodeJS examples can be found on
 [Github](https://github.com/mschwarzmueller/nodejs-basics-tutorial).  
